@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Amazon.Models.Order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                       ID
+                    </th>
+                     <th>
+                        Quantity
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+@foreach (var order in Model) {
+    @foreach (var item in order.OrderItems)
+    {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => order.Id)
+                    </td>
+                      <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Product.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+
+                </tr>
+
+    }
+}
+            </tbody>
+        </table>

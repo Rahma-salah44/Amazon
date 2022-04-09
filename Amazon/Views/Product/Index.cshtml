@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Amazon.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a asp-action="Create" class="btn backColor text-white fw-bold w-70 mt-4">Create New</a>
+</p>
+      <div class="row featured__filter">
+                @{
+                    if(Model!=null)
+                    {
+                        ///////////////////////////////////////////////////////////////////////////////////
+                         foreach(var product in Model)
+                    {
+                         <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                             <div class="featured__item">
+                                  <div class="featured__item__pic set-bg" data-setbg="/@product.ImageURL">
+                                        <ul class="featured__item__pic__hover">
+                                            <li><a href="/Product/Details/@product.Id"><i class="fa fa-info"></i></a></li>
+                                               
+                                             @if(User.IsInRole("Admin"))
+                                            {
+                                                
+                                                  <li><a href="/Product/Delete/@product.Id"><i class="fa fa-solid fa-trash"></i></a></li>
+                                                 <li><a href="/Product/Edit/@product.Id"> <i class="fa-solid fa fa-pencil"></i></a></li>
+                                            }  
+                                            else{   
+                                            
+                                            <li><a href="/Product/Delete/@product.Id"><i class="fa fa-shopping-cart"></i></a></li>
+                                            }
+                                            
+                                        </ul>
+                                  </div>
+                                 <div class="featured__item__text">
+                                    <h6><a href="#">@product.Description</a></h6>
+                                    <h5>@product.PricePerUnit L.E</h5>
+                                  </div>
+                             </div>
+                       </div>
+                    }
+                }
+                    }
+                    </div>
+                   
+               

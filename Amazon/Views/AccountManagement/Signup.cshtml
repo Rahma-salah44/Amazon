@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Amazon.Data.ViewModels;
+@model SignupVM;
+@{
+    ViewData["Title"] = "Sign up in To Your Page";
+}
+
+     <div class="login-form-area m-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <form class="login-form" asp-action="Signup">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <!-- Login Heading -->
+                            <div class="login-heading">
+                                <span>Sign up</span>
+                                <p>Enter Sign up details to get access</p>
+                            </div>
+                   
+                    <!-- Single Input Fields -->
+                            <div class="input-box">
+                                <div class="single-input-fields">
+                                    <label asp-for="FullName">Full Name</label>
+                                    <input  asp-for="FullName" type="text" placeholder="Full Name">
+                                    <span asp-validation-for="FullName" class="text-danger ml-2 h6"></span>
+                                </div>
+                                 <div class="single-input-fields">
+                                    <label asp-for="UserName">UserName</label>
+                                    <input  asp-for="UserName" type="text" placeholder="UserName">
+                                    <span asp-validation-for="UserName" class="text-danger ml-2 h6"></span>
+                                </div>
+                                <div class="single-input-fields">
+                                    <label asp-for="EmailAddress">Email Address</label>
+                                    <input  asp-for="EmailAddress" type="text" placeholder="Email address">
+                                    <span asp-validation-for="EmailAddress" class="text-danger ml-2 h6"></span>
+                                </div>
+                                <div class="single-input-fields">
+                                    <label asp-for="Address">Address</label>
+                                    <input  asp-for="Address" type="text" placeholder="Address">
+                                    <span asp-validation-for="Address" class="text-danger ml-2 h6"></span>
+                                </div>
+                                <div class="single-input-fields">
+                                    <label asp-for="Password">Password</label>
+                                    <input asp-for="Password" type="password" placeholder="Enter Password">
+                                    <span asp-validation-for="Password" class="text-danger ml-2 h6"></span>
+                                </div>
+                                <div class="single-input-fields">
+                                    <label asp-for="ConfiremPassword">Confirem Password</label>
+                                    <input asp-for="ConfiremPassword" type="password" placeholder="Confirem Password">
+                                    <span asp-validation-for="ConfiremPassword" class="text-danger ml-2 h6"></span>
+                                </div>
+                                
+                            </div>
+                            <!-- form Footer -->
+                            <div class="login-footer">
+                                <p>Already has an account? <a  asp-controller="AccountManagement" asp-action="Login">Log In</a>  here</p>
+                                <button type="submit" class="submit-btn3 primary-btn">Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- login Area End -->

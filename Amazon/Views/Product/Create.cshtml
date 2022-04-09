@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "_EmptyLayout";
+}
+@model Product;
+@using Microsoft.AspNetCore.Identity;
+@inject UserManager<User> UserManager;
+
+
+
+
+   <div class="w-40 p-5 mx-auto mt-5 productItem ">
+     <h2 class="fontColor  text-center mb-3">Add Product</h2>
+     <form action="/Product/Create" method="post">
+              <div class="form-group ">
+                <label for="Name">Product Name</label>
+                <input type="text" class="form-control form-input" id="Name" name="Name" value="@Model.Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+
+              </div>
+
+               <div class="form-group pt-0 pb-1">
+                    <label for="CategoryId">Category</label>
+                    <select class="form-control  nice-myselect mt-1 form-input nice-select" name="CategoryId" id="CategoryId">
+                        <option selected disabled hidden value=0 >Select Category</option>
+                        @foreach(var cat in ViewBag.categories)
+                                    {
+                                       <option value="@cat.Id">@cat.Name</option>
+                                    }
+                       </select>
+                                    <span asp-validation-for="Category" class="text-danger"></span>
+
+                </div>
+
+                 <div class="form-group ">
+                    <label for="VendorId" class="pt-3">Vendor</label>
+                     <select class="form-control  nice-myselect mt-1  form-input nice-select" name="VendorId" id="VendorId">
+                          <option selected  disabled hidden value=0 >Select Vendor</option>
+                         @foreach(var vendor in ViewBag.vendors)
+                                    {
+                                       <option value="@vendor.Id">@vendor.Name</option>
+                                     }
+                     </select>
+                                  <span asp-validation-for="Vendor" class="text-danger"></span>
+
+                </div>
+
+          <div class="form-group">
+            <label for="PricePerUnit" class="pt-3">Price</label>
+            <input type="number" class="form-control form-input" id="PricePerUnit" name="PricePerUnit" value="@Model.PricePerUnit">
+             <span asp-validation-for="PricePerUnit" class="text-danger"></span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="ImageURL">Image</label>
+            <input type="file" accept="images/*" class="form-control form-input" id="ImageURL" value="/img/product/@Model.ImageURL" name="ImageURL">
+           <span asp-validation-for="ImageURL" class="text-danger"></span>
+
+          </div>
+
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <textarea class="form-control form-input" id="Description" name="Description" value="@Model.Description" rows="3"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+          </div>
+          <button class="btn backColor float-right text-white fw-bold">Add Product</button>
+     </form>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

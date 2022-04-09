@@ -1,0 +1,150 @@
+﻿@using Amazon.ViewModels
+
+@model ShoppingCartVM
+
+@{
+    ViewData["Title"] = "Shopping cart summary";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="text-center">
+            <h2>You shopping cart summary</h2>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Selected amount</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ShoppingCart.ShoppingCartItems)
+                {
+                    <tr>
+                        <td class="align-middle">@item.Amount</td>
+                        <td class="align-middle">@item.product.Name</td>
+                        <td class="align-middle">@item.product.PricePerUnit.ToString("c")</td>
+                        <td class="align-middle">@((item.Amount*item.product.PricePerUnit).ToString("c"))</td>
+                        <td class="align-middle">
+                            <a class="text-danger" asp-controller="Order" asp-action="RemoveItemFromShoppingCart"
+                               asp-route-id="@item.product.Id">
+                               <label > - </label>
+                            </a>
+                            |
+                            <a class="text-success" asp-controller="Order" asp-action="AddItemToShoppingCart"
+                               asp-route-id="@item.product.Id">
+                               <label > + </label>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2"></td>
+                    <td><b>Total:</b></td>
+                    <td>
+                        @Model.ShoppingCartTotal.ToString("c")
+                    </td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="text-right">
+            <div class="btn-group">
+            <button class="btn btn-outline-primary" id="ProccedtoPay" onclick = "Func1()">
+               Procced to pay 
+            </button>
+            <span style="padding:5px"></span>
+                <a class="btn btn-outline-success" asp-controller="Home" asp-action="Index">
+                    Add more items
+                </a>
+            </div>
+        </div>
+
+
+        <div id="Proceeded" hidden>
+                    <Label>Address:  Cairo </Label>
+                    <hr />
+                   <div class="d-flex">
+                       <label  style="margin: 0 10px;
+                            display: inline-block"; >Pay by Cards</label> <br /> <span id="paypal-btn"></span>
+                        </div>
+                        <hr />
+                <form id="frm" action ="CompleteOrder">
+                   <div class="d-flex">
+                       <input type="radio" name="payment" style="margin: 0 10px;
+                            display: inline-block" required/> <span>Pay by Cash</span>
+                        </div>
+                        <br />
+                        <input type="submit" id="okk" class="btn btn-outline-primary" value="Complete order"/>
+                </form>
+                
+        </div>
+
+        
+
+    </div>
+</div>
+
+@section Scripts{
+
+    <script> 
+
+       Func1 = function(){
+           document.getElementById("Proceeded").hidden=false;
+       }
+        </script>
+
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+
+    <script>
+
+        let _total = @Html.Raw(Model.ShoppingCartTotal);
+
+        paypal.Button.render({
+            //Configure environment
+            env: 'sandbox',
+            client: {
+                sandbox: 'ARuhQxXP62nbDMqTCNEtRxA-9NeXaaRebyASo72z7bJHO81hnGazd6E9NeFo3ieFwRb1N0SukKkKa82z'
+            },
+
+            //Customize button
+            locale: 'en_US',
+            style: {
+                size: 'small',
+                color: 'gold',
+                shape: 'pill'
+            },
+            commit: true,
+
+            //Set up a payment
+            payment: function (data, actions) {
+                return actions.payment.create({
+                    transactions: [{
+                        amount: {
+                            total: _total,
+                            currency: 'USD'
+                        }
+                    }]
+                });
+            },
+
+            //Execute the payment
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    var url = '@Url.Action("CompleteOrder","Orders",new{})';
+                    window.location.href = url;
+                });
+            }
+
+        }, '#paypal-btn')
+    </script>
+}

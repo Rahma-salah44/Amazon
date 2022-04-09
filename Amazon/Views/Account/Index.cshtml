@@ -1,0 +1,55 @@
+﻿@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "List of all Clients";
+}
+
+ <form class="form-inline my-2 my-lg-0" asp-controller="Account" asp-action="search" style="padding-right: 25px;">
+            <input name="searchString" type="text" class="form-control" placeholder="Search for a Users..." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+
+<div class="row">
+    <div class="col-md-9 offset-3">
+        <p>
+            <h4>List of all Clients</h4>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.UserName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                  @* <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>*@
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                   @* <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.PhoneNumber)
+                    </td>*@
+                    <td>
+               
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+                </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,370 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+/* line 2, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form {
+    background: #fff;
+    padding: 33px 60px 50px 50px;
+    box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+}
+
+@media (max-width: 575px) {
+    /* line 2, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form {
+        padding: 40px 20px 20px 26px;
+    }
+}
+
+/* line 9, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .register-heading {
+    text-align: center;
+}
+
+    /* line 11, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .register-heading span {
+        color: #140C40;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: block;
+        text-transform: capitalize;
+    }
+
+/* line 24, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .input-box {
+    padding-top: 35px;
+    padding-bottom: 60px;
+}
+
+@media (max-width: 575px) {
+    /* line 24, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .input-box {
+        padding-top: 28px;
+        padding-bottom: 20px;
+    }
+}
+
+/* line 32, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .input-box .single-input-fields label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* line 41, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .input-box .single-input-fields input {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0 25px;
+    color: #000;
+}
+
+    /* line 48, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .input-box .single-input-fields input::placeholder {
+        color: #777777;
+        font-weight: 300;
+        font-size: 13px;
+    }
+
+/* line 57, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .register-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 57, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .register-footer {
+        display: block;
+        text-align: start;
+    }
+}
+
+@media (max-width: 575px) {
+    /* line 57, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .register-footer {
+        display: block;
+        text-align: start;
+    }
+}
+
+/* line 70, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .register-footer p {
+    margin: 0;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 70, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .register-footer p {
+        margin-bottom: 28px;
+        display: block;
+    }
+}
+
+@media (max-width: 575px) {
+    /* line 70, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+    .register-form-area .register-form .register-footer p {
+        margin-bottom: 28px;
+        display: block;
+    }
+}
+
+/* line 80, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_register.scss */
+.register-form-area .register-form .register-footer p a {
+    color: #0074E8;
+}
+
+/* line 3, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form {
+    background: #fff;
+    padding: 33px 60px 50px 50px;
+    box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+}
+
+@media (max-width: 575px) {
+    /* line 3, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form {
+        padding: 40px 20px 20px 26px;
+    }
+}
+
+/* line 10, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .login-heading {
+    text-align: center;
+}
+
+    /* line 12, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .login-heading span {
+        color: #140C40;
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 16px;
+        display: block;
+        text-transform: capitalize;
+    }
+
+/* line 25, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .input-box {
+    padding-top: 35px;
+    padding-bottom: 75px;
+}
+
+@media (max-width: 575px) {
+    /* line 25, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .input-box {
+        padding-top: 28px;
+        padding-bottom: 10px;
+    }
+}
+
+/* line 33, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .input-box .single-input-fields label {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 6px;
+    margin-top: 20px;
+    color: #140C40;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* line 42, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .input-box .single-input-fields input {
+    border: 1px solid #C9C9C9;
+    width: 100%;
+    height: 50px;
+    /* margin-bottom: 20px;*/
+    padding: 0 25px;
+    color: #000;
+}
+
+    /* line 49, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .input-box .single-input-fields input::placeholder {
+        color: #777777;
+        font-weight: 300;
+        font-size: 13px;
+    }
+
+/* line 59, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .login-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 59, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .login-footer {
+        display: block;
+        text-align: start;
+    }
+}
+
+@media (max-width: 575px) {
+    /* line 59, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .login-footer {
+        display: block;
+        text-align: start;
+    }
+}
+
+/* line 71, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .login-footer p {
+    margin: 0;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 71, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .login-footer p {
+        margin-bottom: 28px;
+        display: block;
+    }
+}
+
+@media (max-width: 575px) {
+    /* line 71, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-form-area .login-form .login-footer p {
+        margin-bottom: 28px;
+        display: block;
+    }
+}
+
+/* line 81, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-form-area .login-form .login-footer p a {
+    color: #0074E8;
+}
+
+/* line 94, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+@media (max-width: 575px) {
+    /* line 94, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-check {
+        display: block;
+    }
+}
+
+/* line 102, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check input[type=checkbox] + label {
+    display: inline-block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 13px 0;
+}
+
+/* line 111, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check input[type=checkbox] {
+    display: none;
+}
+
+/* line 115, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check input[type="checkbox"] + label::before {
+    content: "\2714";
+    border: 0.1em solid #e4e4e4;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 10px;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+/* line 129, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check input[type=checkbox] + label:active:before {
+    transform: scale(0);
+}
+
+/* line 133, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check input[type=checkbox]:checked + label:before {
+    background-color: #140C40;
+    border-color: #140C40;
+    color: #fff;
+    line-height: 18px;
+}
+
+/* line 141, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+.login-check a {
+    color: #0074E8;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+    /* line 145, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-check a:hover {
+        color: #140C40;
+    }
+
+@media (max-width: 575px) {
+    /* line 141, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_login.scss */
+    .login-check a {
+        float: left;
+        display: block;
+        padding-top: 7px;
+        margin-bottom: 10px;
+    }
+}
+
+/* line 380, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
+.submit-btn2 {
+    background: #140C40;
+    width: 100%;
+    height: 60px;
+    padding: 10px 20px;
+    border: 0;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+/* line 393, C:/Users/HP/Desktop/jun-2020/281.Magazine_News/assets/scss/_common.scss */
+.submit-btn3 {
+    background: #140C40;
+    height: 60px;
+    padding: 10px 43px;
+    border: 0;
+    color: #fff;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 0px;
+}
+.logOut_Btn:hover {
+    color: rgb(189, 16, 16);
+}

@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@inject UserManager<User> UserManager;
+@{
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <a  asp-controller="AccountManagement" asp-action="Login"><i class="fa fa-user"></i> Log in</a>
+    <a  asp-controller="AccountManagement" asp-action="Signup"><i class="fa fa-user"></i> Sign Up</a>
+
+}
+else
+{
+      <div class="header__top__right__language mr-1">
+                                
+        <div> Hello @UserManager.GetUserName(User)</div>
+        <span class="arrow_carrot-down"></span>
+        <ul>
+            <li><a class="dropdown-item" asp-controller="Product" asp-action="Index">Products</a></li>
+            <li><a class="dropdown-item"  asp-controller="Order" asp-action="Index">Orders</a></li>
+            <li><a class="dropdown-item" asp-controller="Order" asp-action="ShoppingCart">Cart</a></li>
+            @if (User.IsInRole("Admin"))
+            {
+             <li><a class="dropdown-item" asp-controller="AccountManagement" asp-action="Users">Users</a></li>
+            }
+        </ul>
+     </div>
+
+      <a  asp-controller="AccountManagement" asp-action="Logout" class="logOut_Btn"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+
+}
